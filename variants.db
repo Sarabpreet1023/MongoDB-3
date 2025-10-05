@@ -1,0 +1,10 @@
+// Find the product and the specific variant, then decrement its stock by 5
+db.products.updateOne(
+  { 
+    name: "Classic Crewneck T-Shirt", 
+    "variants.sku": "CCT-BLU-M" 
+  },
+  { 
+    $inc: { "variants.$.stock": -5 } 
+  }
+);
