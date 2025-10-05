@@ -1,0 +1,6 @@
+// Find products where at least one variant has stock less than or equal to 50
+db.products.find({
+  variants: {
+    $elemMatch: { stock: { $lte: 50 } }
+  }
+}).pretty();
