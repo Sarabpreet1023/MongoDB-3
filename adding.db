@@ -1,0 +1,14 @@
+// Add a new variant to the T-Shirt's variants array
+db.products.updateOne(
+  { name: "Classic Crewneck T-Shirt" },
+  { 
+    $push: { 
+      variants: { 
+        color: "Black", 
+        size: "L", 
+        sku: "CCT-BLK-L", 
+        stock: 90 
+      } 
+    } 
+  }
+);
