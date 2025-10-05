@@ -1,0 +1,9 @@
+// Remove the 'Silver' variant from the Wireless Headphones
+db.products.updateOne(
+  { name: "Wireless Noise-Cancelling Headphones" },
+  { 
+    $pull: { 
+      variants: { sku: "WNH-SLV" } 
+    } 
+  }
+);
